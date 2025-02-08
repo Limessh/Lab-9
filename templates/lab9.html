@@ -1,0 +1,29 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Experience</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Work Experience</h1>
+    <form id="experience-form">
+        <input type="text" id="company" placeholder="Наименование места работы" required>
+        <input type="number" id="term" placeholder="Срок работы (в месяцах)" required>
+        <button type="submit">Добавить</button>
+        <button type="button" id="clear-button">Очистить</button>
+    </form>
+
+    <ul id="experience-list">
+        {% for experience in experiences %}
+        <li data-id="{{ experience.id }}">
+            <div>
+                <span>{{ experience.company }} - {{ experience.term }} месяцев</span>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <script src="{{ url_for('static', filename='lab9.js') }}"></script>
+</body>
+</html>
