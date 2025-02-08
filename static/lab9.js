@@ -21,7 +21,7 @@ function addExperience() {
         const experienceList = document.getElementById('experience-list');
         const newItem = document.createElement('li');
         newItem.setAttribute('data-id', data.id);
-        newItem.innerHTML = `<div><span>${data.company} - ${data.term} months</span></div>`;
+        newItem.innerHTML = `<div><span>${data.company} - ${data.term} месяцев</span></div>`;
         experienceList.appendChild(newItem);
         document.getElementById('experience-form').reset();
     })
